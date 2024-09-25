@@ -42,11 +42,11 @@
             //               | CTRL | ALT  |  GUI  | SPACE | LOWER/[ |  | RAISE/] | ENTER |  GUI  |  ALT  | CTRL |
 
             bindings = <
-&kp GRAVE    &kp N1   &kp N2    &kp N3   &kp N4   &kp N5                                  &kp N6   &kp N7   &kp N8    &kp N9   &kp N0   &kp BSLH
-&kp ESC      &kp Q    &kp W     &kp E    &kp R    &kp T                                   &kp Y    &kp U    &kp I     &kp O    &kp P    &kp BSPC
-&kp TAB      &kp A    &kp S     &kp D    &kp F    &kp G                                   &kp H    &kp J    &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHFT    &kp Z    &kp X     &kp C    &kp V    &kp B     &kp C_MUTE     &kp C_PP       &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                      &kp LCTRL &kp LGUI &kp LALT &kp SPACE &mo LOWER LBKT &mo RAISE RBKT &kp RET  &kp RGUI &kp RALT  &kp RCTRL
+&kp GRAVE  &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                                     &kp N6   &kp N7    &kp N8     &kp N9     &kp N0    &kp BSLH
+&kp ESC    &kp Q   &kp W      &kp E     &kp R     &kp T                                      &kp Y    &kp U     &kp I      &kp O      &kp P     &kp BSPC
+&kp TAB    &kp A   &kp S      &kp D     &kp F     &kp G                                      &kp H    &kp J     &kp K      &kp L      &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X      &kp C     &kp V     &kp B      &kp C_MUTE      &kp C_PP        &kp N    &kp M     &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
+                   &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE  &mo LOWER LBKT  &mo RAISE RBKT  &kp RET  &kp RGUI  &kp RALT   &kp RCTRL
             >;
 
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -64,11 +64,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&trans &kp F1    &kp F2    &kp F3   &kp F4    &kp F5                           &kp F6    &kp F7   &kp F8          &kp F9    &kp F10   &kp F11
-&trans &kp N1    &kp N2    &kp N3   &kp N4    &kp N5                           &kp N6    &kp N7   &kp N8          &kp N9    &kp N0    &kp F12
-&trans &kp EXCL  &kp AT    &kp HASH &kp DLLR  &kp PRCNT                        &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp QMARK
-&trans &kp MINUS &kp UNDER &kp LBKT &kp LBRC  &kp BSLH          &trans  &trans &kp PIPE  &kp RBRC &kp RBKT        &kp EQUAL &kp PLUS  &trans
-                 &trans    &trans   &trans    &ext_power EP_TOG &trans  &trans &trans    &trans   &trans          &trans
+&trans  &kp F1     &kp F2     &kp F3    &kp F4    &kp F5                             &kp F6     &kp F7    &kp F8           &kp F9     &kp F10   &kp F11
+&trans  &kp N1     &kp N2     &kp N3    &kp N4    &kp N5                             &kp N6     &kp N7    &kp N8           &kp N9     &kp N0    &kp F12
+&trans  &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT                          &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR   &kp RPAR  &kp QMARK
+&trans  &kp MINUS  &kp UNDER  &kp LBKT  &kp LBRC  &kp BSLH           &trans  &trans  &kp PIPE   &kp RBRC  &kp RBKT         &kp EQUAL  &kp PLUS  &trans
+                   &trans     &trans    &trans    &ext_power EP_TOG  &trans  &trans  &trans     &trans    &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -85,11 +85,11 @@
             //              |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none  &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                &kp F6             &kp F7     &kp F8   &kp F9     &kp F10   &kp F11
-&none  &none  &none  &none  &none  &none                 &kp PG_UP          &kp END    &kp UP   &kp HOME   &kp INS   &kp F12
-&none  &none  &none  &none  &none  &none                 &kp PG_DN          &kp LEFT   &kp DOWN &kp RIGHT  &kp DEL   &mt RCTRL CLCK
-&trans &none  &none  &none  &none  &none  &trans  &trans &kp SLCK           &kp C_PREV &kp C_PP &kp C_NEXT &kp PSCRN &trans
-              &trans &trans &trans &trans &trans  &trans &ext_power EP_TOG  &trans     &trans   &trans
+&none   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                  &kp F6             &kp F7      &kp F8    &kp F9      &kp F10    &kp F11
+&none   &none   &none   &none   &none   &none                   &kp PG_UP          &kp END     &kp UP    &kp HOME    &kp INS    &kp F12
+&none   &none   &none   &none   &none   &none                   &kp PG_DN          &kp LEFT    &kp DOWN  &kp RIGHT   &kp DEL    &mt RCTRL CLCK
+&trans  &none   &none   &none   &none   &none   &trans  &trans  &kp SLCK           &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp PSCRN  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &ext_power EP_TOG  &trans      &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -106,11 +106,11 @@
             //                      |         |         |         |         |         | |      |         |      |       |      |
 
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                        &out OUT_TOG  &none  &none  &none  &none          &none
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none                               &out OUT_USB  &none  &none  &none  &none          &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &none                               &out OUT_BLE  &none  &none  &none  &kp K_BACK     &kp K_FORWARD
-&bt BT_CLR_ALL     &none            &none            &none            &none            &none        &rgb_ug RGB_TOG &none  &none         &none  &none  &none  &kp C_AC_BACK  &kp C_AC_FORWARD
-                                    &none            &none            &none            &none        &none           &none  &none         &none  &none  &none
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                          &out OUT_TOG  &none  &none  &none  &none          &none
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none                                 &out OUT_USB  &none  &none  &none  &none          &none
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &none                                 &out OUT_BLE  &none  &none  &none  &kp K_BACK     &kp K_FORWARD
+&bt BT_CLR_ALL     &none            &none            &none            &none            &none         &rgb_ug RGB_TOG  &none  &none         &none  &none  &none  &kp C_AC_BACK  &kp C_AC_FORWARD
+                                    &none            &none            &none            &none         &none            &none  &none         &none  &none  &none
             >;
 
             sensor-bindings = <&inc_dec_kp K_VOLUME_UP C_VOLUME_DOWN>;
