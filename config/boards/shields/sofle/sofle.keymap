@@ -16,30 +16,21 @@
 #define RAISE  2
 #define ADJUST 3
 
-// Uncomment this block if using RGB
-&led_strip {
-    chain-length = <6>;
-    chain-length = <35>; // Uncomment if using both per-key and underglow LEDs
-    // chain-length = <29>; // Uncomment if using only per-key LEDs.
-};
-
 / {
-    // Activate ADJUST layer by pressing raise and lower
-
+   // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
         compatible = "zmk,conditional-layers";
-
         adjust_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <LOWER RAISE>;
+            then-layer = <ADJUST>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        main_layer {
-            display-name = "MAIN";
+        default_layer {
+            display-name = "default";
 
             // ------------------------------------------------------------------------------------------------------------
             // |  `/\  |  1  |  2   |  3   |   4   |   5   |                      |   6   |   7   |   8   |  9   |  0  |  \/~  |
@@ -49,19 +40,19 @@
             //               | CTRL | ALT  |  GUI  | SPACE | LOWER/[ |  | RAISE/] | ENTER |  GUI  |  ALT  | CTRL |
 
             bindings = <
-&kp GRAVE  &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                           &kp N6   &kp N7    &kp N8     &kp N9     &kp N0    &kp BSLH
-&kp ESC    &kp Q   &kp W      &kp E     &kp R     &kp T                            &kp Y    &kp U     &kp I      &kp O      &kp P     &kp BSPC
-&kp TAB    &kp A   &kp S      &kp D     &kp F     &kp G                            &kp H    &kp J     &kp K      &kp L      &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X      &kp C     &kp V     &kp B      &kp C_MUTE  &kp C_PP  &kp N    &kp M     &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
-                   &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE  &mo 1       &mo 2     &kp RET  &kp RGUI  &kp RALT   &kp RCTRL
+&kp GRAVE  &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                            &kp N6   &kp N7    &kp N8     &kp N9     &kp N0    &kp BSLH
+&kp ESC    &kp Q   &kp W      &kp E     &kp R     &kp T                             &kp Y    &kp U     &kp I      &kp O      &kp P     &kp BSPC
+&kp TAB    &kp A   &kp S      &kp D     &kp F     &kp G                             &kp H    &kp J     &kp K      &kp L      &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X      &kp C     &kp V     &kp B      &kp C_MUTE  &kp C_PP   &kp N    &kp M     &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
+                   &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE  &mo LOWER   &mo RAISE  &kp RET  &kp RGUI  &kp RALT   &kp RCTRL
             >;
 
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
         };
 
-        symbols_layer {
-            display-name = "SYMBOLS";
+        lower_layer {
+            display-name = "lower";
 
             // ------------------------------------------------------------------------------------------------------------
             // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
@@ -81,8 +72,8 @@
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
-        navigate_layer {
-            display-name = "NAVIGATE";
+        raise_layer {
+            display-name = "raise";
 
             // ------------------------------------------------------------------------------------------------------------
             // | OUT_TOG  |  F1  |  F2  |  F3   |  F4   |  F5  |                |  F6  |  F7  |  F8   |  F9  |  F10  |  F11  |
@@ -107,8 +98,8 @@
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
-        bluetooth_layer {
-            display-name = "BLTOOTH";
+        adjust_layer {
+            display-name = "adjust";
 
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR    |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  | OUT_TOG |      |       |      |       |       |
