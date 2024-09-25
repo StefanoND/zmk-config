@@ -74,10 +74,10 @@
             display-name = "raise";
 
             // ------------------------------------------------------------------------------------------------------------
-            // | OUT_TOG  |  F1  |  F2  |  F3   |  F4   |  F5  |                |  F6  |  F7  |  F8   |  F9  |  F10  |  F11  |
-            // | OUT_USB  |      |      |       |       |      |                | PGUP |  END |   ^   | HOME |  INS  |  F12  |
-            // | OUT_BLE  |      |      |       |       |      |                | PGDN |   <- |   v   | ->   |  DEL  | C/CAPS|
-            // | BTCLRALL |      |      |       |       |      |      |  |      | SCRL | PRVS | PLAY  | NEXT |  PSCR |       |
+            // |          |  F1  |  F2  |  F3   |  F4   |  F5  |                |  F6  |  F7  |  F8   |  F9  |  F10  |  F11  |
+            // |          |      |      |       |       |      |                | PGUP |  END |   ^   | HOME |  INS  |  F12  |
+            // |          |      |      |       |       |      |                | PGDN |   <- |   v   | ->   |  DEL  | C/CAPS|
+            // |          |      |      |       |       |      |      |  |      | SCRL | PRVS | PLAY  | NEXT |  PSCR |       |
             //                   |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
