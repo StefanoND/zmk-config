@@ -16,6 +16,13 @@
 #define RAISE  2
 #define ADJUST 3
 
+// Uncomment this block if using RGB
+&led_strip {
+    chain-length = <6>;
+    chain-length = <35>; // Uncomment if using both per-key and underglow LEDs
+    // chain-length = <29>; // Uncomment if using only per-key LEDs.
+};
+
 / {
     // Activate ADJUST layer by pressing raise and lower
 
@@ -31,7 +38,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        MAIN {
+        main_layer {
             display-name = "MAIN";
 
             // ------------------------------------------------------------------------------------------------------------
@@ -53,7 +60,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
         };
 
-        SYMBOLS {
+        symbols_layer {
             display-name = "SYMBOLS";
 
             // ------------------------------------------------------------------------------------------------------------
@@ -74,7 +81,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
-        NAVIGATE {
+        navigate_layer {
             display-name = "NAVIGATE";
 
             // ------------------------------------------------------------------------------------------------------------
@@ -99,7 +106,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
-        BLTOOTH {
+        bluetooth_layer {
             display-name = "BLTOOTH";
 
             // ----------------------------------------------------------------------------------------------------------------------------
