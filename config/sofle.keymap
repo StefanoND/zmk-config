@@ -61,7 +61,6 @@
             // |  TAB  |  A  |  S   |  D   |   F   |   G   |                      |   H   |   J   |   K   |  L   |  ;  |  '/º  |
             // | SHIFT |  Z  |  X   |  C   |   V   |   B   |   MUTE  |  |  PLAY   |   N   |   M   |   ,   |  .   |  /  | SHIFT |
             //               | CTRL | GUI  |  ALT  | SPACE | LOWER/[ |  | RAISE/] | ENTER |  GUI  |  ALT  | CTRL |
-
             bindings = <
 &kp GRAVE  &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                            &kp N6   &kp N7    &kp N8     &kp N9     &kp N0    &kp BSLH
 &kp ESC    &kp Q   &kp W      &kp E     &kp R     &kp T                             &kp Y    &kp U     &kp I      &kp O      &kp P     &kp BSPC
@@ -80,7 +79,6 @@
             // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ª   |
             // |       |  -  |  _  |  [   |  {   |  \   |        |  |       |  |   |  }    |  ]    |  =   |   +   |       |
             //               |     |      |      |      |        |  |       |      |       |       |      |
-
             bindings = <
 &trans  &kp F1     &kp F2     &kp F3    &kp F4    &kp F5                             &kp F6     &kp F7    &kp F8           &kp F9     &kp F10   &kp F11
 &trans  &kp N1     &kp N2     &kp N3    &kp N4    &kp N5                             &kp N6     &kp N7    &kp N8           &kp N9     &kp N0    &kp F12
@@ -88,7 +86,6 @@
 &trans  &kp MINUS  &kp UNDER  &kp LBKT  &kp LBRC  &kp BSLH           &trans  &trans  &kp PIPE   &kp RBRC  &kp RBKT         &kp EQUAL  &kp PLUS  &trans
                    &trans     &trans    &trans    &ext_power EP_TOG  &trans  &trans  &trans     &trans    &trans           &trans
             >;
-
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
         };
 
@@ -100,7 +97,6 @@
             // |          |      |      |       |       |      |                | PGDN |   <- |   v   | ->   |  DEL  | C/CAPS|
             // |          |      |      |       |       |      |      |  |      | SCRL | PRVS | PLAY  | NEXT |  PSCR |       |
             //                   |      |       |       |      |      |  |      |      |      |       |      |
-
             bindings = <
 &none  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                  &kp F6             &kp F7      &kp F8    &kp F9      &kp F10    &kp F11
 &none  &none   &none   &none   &none   &none                   &kp PG_UP          &kp END     &kp UP    &kp HOME    &kp INS    &kp F12
@@ -113,14 +109,12 @@
 
         adjust_layer {
             display-name = "adjust";
-
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR    |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  | OUT_TOG |      |       |      |       |       |
             // | EXTPWR   |         |         |         |         |         |                  | OUT_USB |      |       |      |       |       |
             // |          |         |         |         |         |         |                  | OUT_BLE |      |       |      |       |       |
             // | BTCLRALL |         |         |         |         |         |         | |      |         |      |       |      |       |       |
             //                      |         |         |         |         |         | |      |         |      |       |      |
-
             bindings = <
 &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                             &out OUT_TOG  &none   &none   &none   &none  &none
 &ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                          &out OUT_USB  &none   &none   &none   &none  &none
