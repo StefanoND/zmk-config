@@ -7,7 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-// #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 
@@ -24,19 +24,19 @@
         label = "LEFT_ENCODER";
         a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <60>;
+        steps = <40>;
     };
     right_encoder: encoder_right {
         compatible = "alps,ec11";
         label = "RIGHT_ENCODER";
         a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <60>;
+        steps = <40>;
     };
     sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <30>;
+        triggers-per-rotation = <20>;
     };
 };
 
@@ -92,17 +92,17 @@
         raise_layer {
             display-name = "raise";
             // ------------------------------------------------------------------------------------------------------------
-            // |          |  F1  |  F2  |  F3   |  F4   |  F5  |                |  F6  |  F7  |  F8   |  F9  |  F10  |  F11  |
-            // |          |      |      |       |       |      |                | PGUP |  END |   ^   | HOME |  INS  |  F12  |
-            // |          |      |      |       |       |      |                | PGDN |   <- |   v   | ->   |  DEL  | C/CAPS|
-            // |          |      |      |       |       |      |      |  |      | SCRL | PRVS | PLAY  | NEXT |  PSCR |       |
-            //                   |      |       |       |      |      |  |      |      |      |       |      |
+            // |       |  F1  |  F2  |  F3   |  F4   |  F5  |                |  F6  |  F7  |  F8   |  F9  |  F10  |  F11  |
+            // |       | INS  | PSCR | GUI   |       |      |                | PGUP | HOME |   ^   | END  |       |       |
+            // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
+            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
+            //                |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
 &none  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                  &kp F6             &kp F7      &kp F8    &kp F9      &kp F10    &kp F11
-&none  &none   &none   &none   &none   &none                   &kp PG_UP          &kp END     &kp UP    &kp HOME    &kp INS    &kp F12
-&none  &none   &none   &none   &none   &none                   &kp PG_DN          &kp LEFT    &kp DOWN  &kp RIGHT   &kp DEL    &mt RCTRL CLCK
-&none  &none   &none   &none   &none   &none   &trans  &trans  &kp SLCK           &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp PSCRN  &trans
-               &trans  &trans  &trans  &trans  &trans  &trans  &ext_power EP_TOG  &trans      &trans    &trans
+&trans  &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &trans                    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp N0   &trans
+&trans  &kp LALT    &kp LCTRL  &kp LSHFT    &trans       &kp CLCK                  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
+&trans  &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans    &trans  &trans  &trans     &trans    &trans    &trans     &trans   &trans
+                    &trans     &trans       &trans       &trans    &trans  &trans  &trans     &trans    &trans    &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
         };
@@ -111,16 +111,16 @@
             display-name = "adjust";
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR    |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  | OUT_TOG |      |       |      |       |       |
-            // | EXTPWR   |         |         |         |         |         |                  | OUT_USB |      |       |      |       |       |
-            // |          |         |         |         |         |         |                  | OUT_BLE |      |       |      |       |       |
+            // | EXTPWR   | HUEDEC  | HUEINC  | SATDEC  | SATINC  | EFFECT+ |                  | OUT_USB |      |       |      |       |       |
+            // |          | BRITDEC | BRITINC |         |         | EFFECT- |                  | OUT_BLE |      |       |      |       |       |
             // | BTCLRALL |         |         |         |         |         |         | |      |         |      |       |      |       |       |
             //                      |         |         |         |         |         | |      |         |      |       |      |
             bindings = <
-&bt BT_CLR        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &out OUT_TOG  &none   &none   &none   &none  &none
-&ext_power EP_TOG &trans        &trans        &trans        &trans        &trans                        &out OUT_USB  &none   &none   &none   &none  &none
-&none             &trans        &trans        &none         &none         &none                         &out OUT_BLE  &none   &none   &none   &none  &none
-&bt BT_CLR_ALL    &none         &none         &none         &none         &none         &trans  &none   &none         &none   &none   &none   &none  &none
-                                &trans        &trans        &trans        &trans        &trans  &trans  &trans        &trans  &trans  &trans
+&bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                             &out OUT_TOG  &none   &none   &none   &none  &none
+&ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                          &out OUT_USB  &none   &none   &none   &none  &none
+&none             &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &rgb_ug RGB_EFR                          &out OUT_BLE  &none   &none   &none   &none  &none
+&none             &none           &none           &none           &none           &none            &rgb_ug RGB_TOG &none   &none         &none   &none   &none   &none  &none
+                                  &trans          &trans          &trans          &trans           &trans          &trans  &trans        &trans  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
@@ -129,34 +129,6 @@
 };
 
 
-// /*
-//  * Copyright (c) 2020 The ZMK Contributors
-//  *
-//  * SPDX-License-Identifier: MIT
-//  */
-//
-// #include <behaviors.dtsi>
-// #include <dt-bindings/zmk/keys.h>
-// #include <dt-bindings/zmk/bt.h>
-// #include <dt-bindings/zmk/rgb.h>
-// #include <dt-bindings/zmk/ext_power.h>
-//
-// #define BASE 0
-// #define LOWER 1
-// #define RAISE 2
-// #define ADJUST 3
-//
-// / {
-//
-//    // Activate ADJUST layer by pressing raise and lower
-//     conditional_layers {
-//         compatible = "zmk,conditional-layers";
-//         adjust_layer {
-//             if-layers = <LOWER RAISE>;
-//             then-layer = <ADJUST>;
-//         };
-//     };
-//
 //     keymap {
 //         compatible = "zmk,keymap";
 //
@@ -199,41 +171,3 @@
 //             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 //         };
 //
-//         raise_layer {
-//             display-name = "raise";
-// // ------------------------------------------------------------------------------------------------------------
-// // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-// // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-// // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-// // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-// //                |      |       |       |      |      |  |      |      |      |       |      |
-//             bindings = <
-// &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                  &trans    &trans    &trans   &trans    &trans  &trans
-// &trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                        &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
-// &trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                      &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
-// &trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans        &trans  &trans  &trans    &trans    &trans   &trans    &trans  &trans
-//                         &trans       &trans       &trans       &trans        &trans  &trans  &trans    &trans    &trans   &trans
-//             >;
-//
-//             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-//         };
-//
-//         adjust_layer {
-// // ----------------------------------------------------------------------------------------------------------------------------
-// // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
-// // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-// // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-// // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
-// //                    |         |         |         |         |         | |      |      |      |       |      |
-//             display-name = "adjust";
-//             bindings = <
-// &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                            &none &none &none &none &none &none
-// &ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                         &none &none &none &none &none &none
-// &none             &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &none                                   &none &none &none &none &none &none
-// &none             &none           &none           &none           &none           &none            &rgb_ug RGB_TOG &none  &none &none &none &none &none &none
-//                                   &none           &none           &none           &none            &none           &none  &none &none &none &none
-//             >;
-//         };
-//
-//     };
-// };
