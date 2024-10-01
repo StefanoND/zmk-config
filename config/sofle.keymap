@@ -88,7 +88,7 @@
 &trans    &trans  &trans  &kp PT_LBRC  &kp PT_LBKT  &kp PT_LPAR                  &kp PT_RPAR  &kp PT_LBKT  &kp PT_RBRC  &kp F11  &kp F12  &kp DEL
 &trans    &trans  &trans  &trans       &kp PT_HASH  &kp PT_AMPS                  &kp PT_PLUS  &kp PT_STAR  &trans       &trans   &trans   &kp PT_ACUTE
 &kp CAPS  &trans  &trans  &trans       &trans       &trans       &trans  &trans  &trans       &trans       &trans       &trans   &trans   &kp SLCK
-                &trans  &trans       &trans       &trans       &trans  &trans  &trans       &trans       &trans       &trans
+                  &trans  &trans       &trans       &trans       &trans  &trans  &trans       &trans       &trans       &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
         };
