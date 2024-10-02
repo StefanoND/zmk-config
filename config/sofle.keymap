@@ -66,11 +66,11 @@
             // | SHIFT |  Z  |  X   |  C   |   V   |   B   |   MUTE  |  |  PLAY   |   N   |   M   |   ,   |  .   |  -  |   <   |
             //               | CTRL | META |  ALT  | SPACE |  LOWER  |  |  RAISE  | ENTER |   º   |  ALT  | CTRL |
             bindings = <
-&kp ESC      &kp PT_N1  &kp PT_N2  &kp PT_N3  &kp PT_N4  &kp PT_N5                         &kp PT_N6  &kp PT_N7    &kp PT_N8     &kp PT_N9   &kp PT_N0         &kp BSPC
-&kp PT_BSLH  &kp PT_Q   &kp PT_W   &kp PT_E   &kp PT_R   &kp PT_T                          &kp PT_Y   &kp PT_U     &kp PT_I      &kp PT_O    &kp PT_P          &kp PT_SINGLE_QUOTE
-&kp TAB      &kp PT_A   &kp PT_S   &kp PT_D   &kp PT_F   &kp PT_G                          &kp PT_H   &kp PT_J     &kp PT_K      &kp PT_L    &kp PT_C_CEDILLA  &kp PT_TILDE
-&kp LSHFT    &kp PT_Z   &kp PT_X   &kp PT_C   &kp PT_V   &kp PT_B   &kp C_MUTE  &kp C_PP   &kp PT_N   &kp PT_M     &kp PT_COMMA  &kp PT_DOT  &kp PT_MINUS      &kp PT_LESS_THAN
-                        &kp LCTRL  &kp LGUI   &kp LALT   &kp SPACE  &mo LOWER   &mo RAISE  &kp RET    &kp PT_ORDM  &kp RALT      &kp RCTRL
+&kp ESC           &kp PT_N1  &kp PT_N2  &kp PT_N3  &kp PT_N4  &kp PT_N5                         &kp PT_N6  &kp PT_N7    &kp PT_N8     &kp PT_N9   &kp PT_N0         &kp BSPC
+&kp PT_BACKSLASH  &kp PT_Q   &kp PT_W   &kp PT_E   &kp PT_R   &kp PT_T                          &kp PT_Y   &kp PT_U     &kp PT_I      &kp PT_O    &kp PT_P          &kp PT_SINGLE_QUOTE
+&kp TAB           &kp PT_A   &kp PT_S   &kp PT_D   &kp PT_F   &kp PT_G                          &kp PT_H   &kp PT_J     &kp PT_K      &kp PT_L    &kp PT_C_CEDILLA  &kp PT_TILDE
+&kp LSHFT         &kp PT_Z   &kp PT_X   &kp PT_C   &kp PT_V   &kp PT_B   &kp C_MUTE  &kp C_PP   &kp PT_N   &kp PT_M     &kp PT_COMMA  &kp PT_DOT  &kp PT_MINUS      &kp PT_LESS_THAN
+                             &kp LCTRL  &kp LGUI   &kp LALT   &kp SPACE  &mo LOWER   &mo RAISE  &kp RET    &kp PT_ORDM  &kp RALT      &kp RCTRL
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
@@ -78,17 +78,17 @@
         lower_layer {
             display-name = "lower";
             // ------------------------------------------------------------------------------------------------------------
-            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |   «   |
-            // |       |     |     |   {  |   [  |  (   |                   |  )   |   ]   |   }   |  F11 |  F12  |  DEL  |
-            // |       |     |     |      |   #  |  &   |                   |  +   |   *   |       |      |       |   ´   |
-            // | CAPSL |     |     |      |      |      |        |  |       |      |       |       |      |       | SCROL |
+            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  DEL  |
+            // |       |     |     |   {  |   [  |  (   |                   |  )   |   ]   |   }   |  F11 |  F12  |   «   |
+            // | SCROL |     |     |   #  |   $  |  %   |                   |  &   |   =   |   !   |      |       |   ´   |
+            // | CAPSL |     |     |      |   /  |  *   |        |  |       |  +   |   -   |       |      |       |       |
             //               |     |      |      |      |        |  |       |      |       |       |      |
             bindings = <
-&trans    &kp F1  &kp F2  &kp F3       &kp F4       &kp F5                       &kp F6       &kp F7       &kp F8       &kp F9   &kp F10  &kp PT_LAQUO
-&trans    &trans  &trans  &kp PT_LBRC  &kp PT_LBKT  &kp PT_LPAR                  &kp PT_RPAR  &kp PT_LBKT  &kp PT_RBRC  &kp F11  &kp F12  &kp DEL
-&trans    &trans  &trans  &trans       &kp PT_HASH  &kp PT_AMPS                  &kp PT_PLUS  &kp PT_STAR  &trans       &trans   &trans   &kp PT_ACUTE
-&kp CAPS  &trans  &trans  &trans       &trans       &trans       &trans  &trans  &trans       &trans       &trans       &trans   &trans   &kp SLCK
-                  &trans  &trans       &trans       &trans       &trans  &trans  &trans       &trans       &trans       &trans
+&trans    &kp F1  &kp F2  &kp F3       &kp F4         &kp F5                       &kp F6       &kp F7        &kp F8              &kp F9   &kp F10  &kp DEL
+&trans    &trans  &trans  &kp PT_LBRC  &kp PT_LBKT    &kp PT_LPAR                  &kp PT_RPAR  &kp PT_LBKT   &kp PT_RBRC         &kp F11  &kp F12  &kp PT_LEFT_ANGLE_QUOTE
+&kp SLCK  &trans  &trans  &kp PT_HASH  &kp PT_DOLLAR  &kp PT_PERCENT               &kp PT_AMPS  &kp PT_EQUAL  &kp PT_EXCLAMATION  &trans   &trans   &kp PT_ACUTE
+&kp CAPS  &trans  &trans  &trans       &kp PT_SLASH   &kp PT_STAR  &trans  &trans  &kp PT_PLUS  &kp PT_MINUS  &trans              &trans   &trans   &trans
+                  &trans  &trans       &trans         &trans       &trans  &trans  &trans       &trans        &trans              &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
         };
@@ -96,16 +96,16 @@
         raise_layer {
             display-name = "raise";
             // ------------------------------------------------------------------------------------------------------------
-            // |       |  F1  |  F2  |  F3   |  F4   |  F5  |                |  F6  |  F7  |  F8   |  F9  |  F10  |  F11  |
-            // |       | INS  | PSCR | GUI   |       |      |                | PGUP | HOME |   ^   | END  |       |       |
-            // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
+            // |       |  F1  |  F2  |  F3   |  F4   |  F5  |                |  F6  |  F7  |  F8   |  F9  |  F10  | BKSPC |
+            // |       | INS  | PSCR | GUI   |       |      |                | PGUP | HOME |       |      |       |  DEL  |
+            // |       | ALT  | CTRL | SHIFT |       |      |                |  <-  |   v  |   ^   |  ->  |       |       |
+            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      | PGDN | END  |       |      |       |       |
             //                |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
-&none   &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                    &kp F6     &kp F7    &kp F8    &kp F9     &kp F10  &kp F11
-&trans  &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &trans                    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp N0   &trans
-&trans  &kp LALT    &kp LCTRL  &kp LSHFT    &trans       &kp CLCK                  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&trans  &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans    &trans  &trans  &trans     &trans    &trans    &trans     &trans   &trans
+&none   &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                    &kp F6     &kp F7    &kp F8    &kp F9     &kp F10  &kp BSPC
+&trans  &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &trans                    &kp PG_UP  &kp HOME  &trans    &trans     &kp N0   &kp DEL
+&trans  &kp LALT    &kp LCTRL  &kp LSHFT    &trans       &trans                    &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT  &trans   &trans
+&trans  &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans    &trans  &trans  &kp PG_DN  &kp END   &trans    &trans     &trans   &trans
                     &trans     &trans       &trans       &trans    &trans  &trans  &trans     &trans    &trans    &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
