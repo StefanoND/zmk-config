@@ -25,14 +25,12 @@
 / {
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        label = "LEFT_ENCODER";
         a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <40>;
     };
     right_encoder: encoder_right {
         compatible = "alps,ec11";
-        label = "RIGHT_ENCODER";
         a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <40>;
@@ -78,17 +76,17 @@
         lower_layer {
             display-name = "lower";
             // -------------------------------------------------------------------------------------------------------------
-            // | PSCRN |  ^  |  "  |   '   |   @   |   &   |                | INS  | NUMLK |   /   |   *   |   -   |  DEL  |
-            // |  GUI  |  {  |  }  |   _   |   +   |   *   |                | HOME |   7   |   8   |   9   |   +   |       |
-            // | SCROL |  (  |  )  |   #   |   =   |   !   |                | PGUP |   4   |   5   |   6   |   +   |       |
-            // | CAPSL |  [  |  ]  |   |   |   -   |   /   |       |  |     | PGDN |   1   |   2   |   3   |   =   |       |
-            //               |     |       |       |       |       |  |     | END  |   0   |   0   |   .   |
+            // | PSCRN |  ^  |  "  |   '   |   @   |   &   |                | HOME | NUMLK |   /   |   *   |   -   |  DEL  |
+            // |  GUI  |  {  |  }  |   _   |   $   |   %   |                | PGUP |   7   |   8   |   9   |   +   |       |
+            // | SCROL |  (  |  )  |   #   |   ´   |   !   |                | PGDN |   4   |   5   |   6   |   +   |       |
+            // | CAPSL |  [  |  ]  |   |   |   `   |   /   |       |  |     | END  |   1   |   2   |   3   |   =   |       |
+            //               |     |       |       |       |       |  |     |      |   0   |   0   |   .   |
             bindings = <
-&kp PSCRN    &kp PT_CARET  &kp PT_DQT   &kp PT_SQT    &kp PT_AT     &kp PT_AMPS                  &kp INS    &kp KP_NUM  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_MINUS  &kp DEL
-&kp K_CMENU  &kp PT_LBRC   &kp PT_RBRC  &kp PT_UNDER  &kp PT_PLUS   &kp PT_STAR                  &kp HOME   &kp KP_N7   &kp KP_N8      &kp KP_N9        &kp KP_PLUS   &trans
-&kp SLCK     &kp PT_LPAR   &kp PT_RPAR  &kp PT_HASH   &kp PT_EQUAL  &kp PT_EXCL                  &kp PG_UP  &kp KP_N4   &kp KP_N5      &kp KP_N6        &kp KP_PLUS   &trans
-&kp CAPS     &kp PT_LBKT   &kp PT_RBKT  &kp PT_PIPE   &kp PT_MINUS  &kp PT_FSLH  &trans  &trans  &kp PG_DN  &kp KP_N1   &kp KP_N2      &kp KP_N3        &kp PT_EQUAL  &trans
-                           &trans       &trans        &trans        &trans       &trans  &trans  &kp END    &kp KP_N0   &kp KP_N0      &kp KP_DOT
+&kp PSCRN    &kp PT_CARET  &kp PT_DQT   &kp PT_SQT    &kp PT_AT     &kp PT_AMPS                  &kp HOME   &kp KP_NUM  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_MINUS  &kp DEL
+&kp K_CMENU  &kp PT_LBRC   &kp PT_RBRC  &kp PT_UNDER  &kp PT_DLLR   &kp PT_PRCNT                 &kp PG_UP  &kp KP_N7   &kp KP_N8      &kp KP_N9        &kp KP_PLUS   &trans
+&kp SLCK     &kp PT_LPAR   &kp PT_RPAR  &kp PT_HASH   &kp PT_ACUTE  &kp PT_EXCL                  &kp PG_DN  &kp KP_N4   &kp KP_N5      &kp KP_N6        &kp KP_PLUS   &trans
+&kp CAPS     &kp PT_LBKT   &kp PT_RBKT  &kp PT_PIPE   &kp PT_GRAVE  &kp PT_FSLH  &trans  &trans  &kp END    &kp KP_N1   &kp KP_N2      &kp KP_N3        &kp PT_EQUAL  &trans
+                           &trans       &trans        &trans        &trans       &trans  &trans  &trans     &kp KP_N0   &kp KP_N0      &kp KP_DOT
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
         };
