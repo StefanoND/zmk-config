@@ -38,7 +38,7 @@
     sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <20>;
+        triggers-per-rotation = <5>;
     };
 };
 
@@ -76,17 +76,17 @@
         lower_layer {
             display-name = "lower";
             // -------------------------------------------------------------------------------------------------------------
-            // | PSCRN |  ^  |  "  |   '   |   @   |   &   |                | HOME | NUMLK |   /   |   *   |   -   |  DEL  |
-            // |  GUI  |  {  |  }  |   _   |   $   |   %   |                | PGUP |   7   |   8   |   9   |   +   |       |
-            // | SCROL |  (  |  )  |   #   |   ´   |   !   |                | PGDN |   4   |   5   |   6   |   +   |       |
-            // | CAPSL |  [  |  ]  |   |   |   `   |   /   |       |  |     | END  |   1   |   2   |   3   |   =   |       |
-            //               |     |       |       |       |       |  |     |      |   0   |   0   |   .   |
+            // |       | PSCRN |  ^  |   |   |   &   |       |                |      | NUMLK |   /   |   *   |   -   |  DEL  |
+            // |       |  GUI  |  #  |   (   |   )   |   =   |                |  *   |   7   |   8   |   9   |   +   |       |
+            // |       | SCROL |  %  |   {   |   }   |   /   |                |  -   |   4   |   5   |   6   |   +   |       |
+            // | CAPSL |       |  @  |   [   |   ]   |   !   |       |  |     |  +   |   1   |   2   |   3   |   =   |       |
+            //                 |     |       |       |       |       |  |     |      |   0   |   0   |   .   |
             bindings = <
-&kp PSCRN    &kp PT_CARET  &kp PT_DQT   &kp PT_SQT    &kp PT_AT     &kp PT_AMPS                  &kp HOME   &kp KP_NUM  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_MINUS  &kp DEL
-&kp K_CMENU  &kp PT_LBRC   &kp PT_RBRC  &kp PT_UNDER  &kp PT_DLLR   &kp PT_PRCNT                 &kp PG_UP  &kp KP_N7   &kp KP_N8      &kp KP_N9        &kp KP_PLUS   &trans
-&kp SLCK     &kp PT_LPAR   &kp PT_RPAR  &kp PT_HASH   &kp PT_ACUTE  &kp PT_EXCL                  &kp PG_DN  &kp KP_N4   &kp KP_N5      &kp KP_N6        &kp KP_PLUS   &trans
-&kp CAPS     &kp PT_LBKT   &kp PT_RBKT  &kp PT_PIPE   &kp PT_GRAVE  &kp PT_FSLH  &trans  &trans  &kp END    &kp KP_N1   &kp KP_N2      &kp KP_N3        &kp PT_EQUAL  &trans
-                           &trans       &trans        &trans        &trans       &trans  &trans  &trans     &kp KP_N0   &kp KP_N0      &kp KP_DOT
+&trans    &kp PSCRN    &kp PT_CARET  &kp PT_PIPE   &kp PT_AMPS  &trans                        &trans        &kp KP_NUM  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_MINUS  &kp DEL
+&trans    &kp K_CMENU  &kp PT_HASH   &kp PT_LPAR   &kp PT_RPAR  &kp PT_EQUAL                  &kp PT_STAR   &kp KP_N7   &kp KP_N8      &kp KP_N9        &kp KP_PLUS   &trans
+&trans    &kp SLCK     &kp PT_PRCNT  &kp PT_LBRC   &kp PT_RBRC  &kp PT_FSLH                   &kp PT_MINUS  &kp KP_N4   &kp KP_N5      &kp KP_N6        &kp KP_PLUS   &trans
+&kp CAPS  &trans       &kp PT_AT     &kp PT_LBKT   &kp PT_RBKT  &kp PT_EXCL   &trans  &trans  &kp PT_PLUS   &kp KP_N1   &kp KP_N2      &kp KP_N3        &kp PT_EQUAL  &trans
+                       &trans        &trans        &trans       &trans        &trans  &trans  &trans        &kp KP_N0   &kp KP_N0      &kp KP_DOT
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
         };
@@ -95,16 +95,16 @@
             display-name = "raise";
             // -------------------------------------------------------------------------------------------------------------
             // |       |  F1  |  F2  |  F3   |  F4   |  F5  |                |  F6  |   F7   |  F8  |  F9  |  F10  |  DEL  |
-            // |       | INS  | PSCR | GUI   |       |      |                | PREV |  VOL-  | VOL+ | NEXT |  F11  |  F12  |
-            // |       | ALT  | CTRL | SHIFT |       |      |                |     |       |     |     |       |       |
-            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      | BRI- |  MUTE  |      | BRI+ |       |       |
+            // |       | INS  | PSCR | GUI   |       | BRI+ |                | HOME |  PGUP  | VOL+ | NEXT |  F11  |  F12  |
+            // |       | ALT  | CTRL | SHIFT |       | BRI- |                |     |       |     |     |       |       |
+            // |       | UNDO | CUT  | COPY  | PASTE | MUTE |      |  |      | END  |  PGDN  | VOL- | PREV |       |       |
             //                |      |       |       |      |      |  |      |      |        |      |      |
             bindings = <
-&trans  &kp F1      &kp F2      &kp F3       &kp F4      &kp F5                       &kp F6        &kp F7        &kp F8        &kp F9        &kp F10  &kp DEL
-&trans  &kp INS     &kp PSCRN   &kp K_CMENU  &trans      &trans                       &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp F11  &kp F12
-&trans  &kp LALT    &kp LCTRL   &kp LSHFT    &trans      &trans                       &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans   &trans
-&trans  &kp K_REDO  &kp K_UNDO  &kp K_CUT    &kp K_COPY  &kp K_PASTE  &trans  &trans  &kp C_BRI_DN  &kp C_MUTE    &trans        &kp C_BRI_UP  &trans   &trans
-                    &trans      &trans       &trans      &trans       &trans  &trans  &trans        &trans        &trans        &trans
+&trans      &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                        &kp F6    &kp F7     &kp F8        &kp F9      &kp F10  &kp DEL
+&trans      &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &kp C_BRI_UP                  &kp HOME  &kp PG_UP  &kp C_VOL_UP  &kp C_NEXT  &kp F11  &kp F12
+&trans      &kp LALT    &kp LCTRL  &kp LSHFT    &trans       &kp C_BRI_DN                  &kp LEFT  &kp DOWN   &kp UP        &kp RIGHT   &trans   &trans
+&kp K_REDO  &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &kp C_MUTE    &trans  &trans  &kp END   &kp PG_DN  &kp C_VOL_DN  &kp C_PREV  &trans   &trans
+                        &trans     &trans       &trans       &trans        &trans  &trans  &trans    &trans     &trans        &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
         };
@@ -129,47 +129,3 @@
         };
     };
 };
-
-
-//     keymap {
-//         compatible = "zmk,keymap";
-//
-//         default_layer {
-//             display-name = "default";
-// // ------------------------------------------------------------------------------------------------------------
-// // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
-// // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
-// // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-// //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
-//             bindings = <
-// &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &trans
-// &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
-// &kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-// &kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &trans     &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-//                  &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp RET    &kp SPACE  &mo RAISE  &kp RCTRL &kp RALT  &kp RGUI
-//             >;
-//
-//             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-//         };
-//
-//         lower_layer {
-//             display-name = "lower";
-// // TODO: Some binds are waiting for shifted keycode support.
-// // ------------------------------------------------------------------------------------------------------------
-// // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-// // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  F12  |
-// // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
-// // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
-// //               |     |      |      |      |        |  |       |      |       |       |      |
-//             bindings = <
-// &trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                    &kp F6    &kp F7   &kp F8    &kp F9    &kp F10   &kp F11
-// &kp GRAVE &kp N1    &kp N2    &kp N3      &kp N4    &kp N5                    &kp N6    &kp N7   &kp N8    &kp N9    &kp N0    &kp F12
-// &trans    &kp EXCL  &kp AT    &kp HASH    &kp DLLR  &kp PRCNT                 &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp PIPE
-// &trans    &kp EQUAL &kp MINUS &kp PLUS &kp LBRC  &kp RBRC   &trans &trans  &kp LBKT  &kp RBKT &kp SEMI  &kp COLON &kp BSLH  &trans
-//                     &trans    &trans      &trans    &trans     &trans &trans  &trans    &trans   &trans    &trans
-//             >;
-//
-//             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-//         };
-//
