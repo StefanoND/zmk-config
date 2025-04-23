@@ -78,13 +78,13 @@
             // -------------------------------------------------------------------------------------------------------------
             // |       | PSCRN |  ^  |   |   |   &   |       |                |      | NUMLK |   /   |   *   |   -   |  DEL  |
             // |       |  GUI  |  #  |   (   |   )   |   =   |                |  *   |   7   |   8   |   9   |   +   |       |
-            // |       | SCROL |  %  |   {   |   }   |   /   |                |  -   |   4   |   5   |   6   |   +   |       |
+            // |       | SCROL |  %  |   {   |   }   |   /   |                |  -   |   4   |   5   |   6   |   +   |   ´   |
             // | CAPSL |       |  @  |   [   |   ]   |   !   |       |  |     |  +   |   1   |   2   |   3   |   =   |       |
             //                 |     |       |       |       |       |  |     |      |   0   |   0   |   .   |
             bindings = <
 &trans    &kp PSCRN    &kp PT_CARET  &kp PT_PIPE   &kp PT_AMPS  &trans                        &trans        &kp KP_NUM  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_MINUS  &kp DEL
 &trans    &kp K_CMENU  &kp PT_HASH   &kp PT_LPAR   &kp PT_RPAR  &kp PT_EQUAL                  &kp PT_STAR   &kp KP_N7   &kp KP_N8      &kp KP_N9        &kp KP_PLUS   &trans
-&trans    &kp SLCK     &kp PT_PRCNT  &kp PT_LBRC   &kp PT_RBRC  &kp PT_FSLH                   &kp PT_MINUS  &kp KP_N4   &kp KP_N5      &kp KP_N6        &kp KP_PLUS   &trans
+&trans    &kp SLCK     &kp PT_PRCNT  &kp PT_LBRC   &kp PT_RBRC  &kp PT_FSLH                   &kp PT_MINUS  &kp KP_N4   &kp KP_N5      &kp KP_N6        &kp KP_PLUS   &kp PT_ACUTE
 &kp CAPS  &trans       &kp PT_AT     &kp PT_LBKT   &kp PT_RBKT  &kp PT_EXCL   &trans  &trans  &kp PT_PLUS   &kp KP_N1   &kp KP_N2      &kp KP_N3        &kp PT_EQUAL  &trans
                        &trans        &trans        &trans       &trans        &trans  &trans  &trans        &kp KP_N0   &kp KP_N0      &kp KP_DOT
             >;
