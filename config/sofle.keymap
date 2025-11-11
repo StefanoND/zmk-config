@@ -62,22 +62,22 @@
         default_layer {
             display-name = "default";
             bindings = <
-//    ┌──────┬──────┬──────┬──────┬──────┬──────┐                       ┌──────┬─────────┬──────┬──────┬────────────────┬──────┐
-//    │ esc  │ PT_1 │ PT_2 │ PT_3 │ PT_4 │ PT_5 │                       │ PT_6 │  PT_7   │ PT_8 │ PT_9 │      PT_0      │ bspc │
-//    ├──────┼──────┼──────┼──────┼──────┼──────┤                       ├──────┼─────────┼──────┼──────┼────────────────┼──────┤
-//    │ PT_\ │ PT_Q │ PT_W │ PT_E │ PT_R │ PT_T │                       │ PT_Y │  PT_U   │ PT_I │ PT_O │      PT_P      │ PT_' │
-//    ├──────┼──────┼──────┼──────┼──────┼──────┤                       ├──────┼─────────┼──────┼──────┼────────────────┼──────┤
-//    │ tab  │ PT_A │ PT_S │ PT_D │ PT_F │ PT_G │                       │ PT_H │  PT_J   │ PT_K │ PT_L │ PT_C_CEDILlalt │ PT_~ │
-//    ├──────┼──────┼──────┼──────┼──────┼──────┼──────────┬────────────┼──────┼─────────┼──────┼──────┼────────────────┼──────┤
-//    │ lsft │ PT_Z │ PT_X │ PT_C │ PT_V │ PT_B │   mute   │    play    │ PT_N │  PT_M   │ PT_, │ PT_. │      PT_-      │ PT_< │
-//    └──────┴──────┼──────┼──────┼──────┼──────┼──────────┼────────────┼──────┼─────────┼──────┼──────┼────────────────┴──────┘
-//                  │ lctl │ lgui │ lalt │ spc  │ mo LOWER │ mo raltISE │ ent  │ PT_ORDM │ ralt │ rctl │
-//                  └──────┴──────┴──────┴──────┴──────────┴────────────┴──────┴─────────┴──────┴──────┘
-  &kp ESC       &kp PT_N1   &kp PT_N2   &kp PT_N3   &kp PT_N4   &kp PT_N5                            &kp PT_N6   &kp PT_N7     &kp PT_N8      &kp PT_N9    &kp PT_N0          &kp BSPC
-  &kp PT_BSLH   &kp PT_Q    &kp PT_W    &kp PT_E    &kp PT_R    &kp PT_T                             &kp PT_Y    &kp PT_U      &kp PT_I       &kp PT_O     &kp PT_P           &kp PT_SINGLE_QUOTE
-  &kp TAB       &kp PT_A    &kp PT_S    &kp PT_D    &kp PT_F    &kp PT_G                             &kp PT_H    &kp PT_J      &kp PT_K       &kp PT_L     &kp PT_C_CEDILLA   &kp PT_TILDE
-  &kp LSHFT     &kp PT_Z    &kp PT_X    &kp PT_C    &kp PT_V    &kp PT_B    &kp C_MUTE   &kp C_PP    &kp PT_N    &kp PT_M      &kp PT_COMMA   &kp PT_DOT   &kp PT_MINUS       &kp PT_LESS_THAN
-                            &kp LCTRL   &kp LGUI    &kp LALT    &kp SPACE   &mo LOWER    &mo RAISE   &kp RET     &kp PT_ORDM   &kp RALT       &kp RCTRL
+//    ┌──────┬──────┬──────┬──────┬──────┬──────┐                           ┌──────┬─────────┬──────┬──────┬────────────────┬──────┐
+//    │ esc  │ PT_1 │ PT_2 │ PT_3 │ PT_4 │ PT_5 │                           │ PT_6 │  PT_7   │ PT_8 │ PT_9 │      PT_0      │ bspc │
+//    ├──────┼──────┼──────┼──────┼──────┼──────┤                           ├──────┼─────────┼──────┼──────┼────────────────┼──────┤
+//    │ PT_\ │ PT_Q │ PT_W │ PT_E │ PT_R │ PT_T │                           │ PT_Y │  PT_U   │ PT_I │ PT_O │      PT_P      │ PT_' │
+//    ├──────┼──────┼──────┼──────┼──────┼──────┤                           ├──────┼─────────┼──────┼──────┼────────────────┼──────┤
+//    │ tab  │ PT_A │ PT_S │ PT_D │ PT_F │ PT_G │                           │ PT_H │  PT_J   │ PT_K │ PT_L │ PT_C_CEDILlalt │ PT_~ │
+//    ├──────┼──────┼──────┼──────┼──────┼──────┼──────────┐   ┌────────────┼──────┼─────────┼──────┼──────┼────────────────┼──────┤
+//    │ lsft │ PT_Z │ PT_X │ PT_C │ PT_V │ PT_B │   mute   │   │    play    │ PT_N │  PT_M   │ PT_, │ PT_. │      PT_-      │ PT_< │
+//    └──────┴──────┼──────┼──────┼──────┼──────┼──────────┤   ├────────────┼──────┼─────────┼──────┼──────┼────────────────┴──────┘
+//                  │ lctl │ lgui │ lalt │ spc  │ mo LOWER │   │ mo raltISE │ ent  │ PT_ORDM │ ralt │ rctl │
+//                  └──────┴──────┴──────┴──────┴──────────┘   └────────────┴──────┴─────────┴──────┴──────┘
+  &kp ESC       &kp PT_N1   &kp PT_N2   &kp PT_N3   &kp PT_N4   &kp PT_N5                                &kp PT_N6   &kp PT_N7     &kp PT_N8      &kp PT_N9    &kp PT_N0          &kp BSPC
+  &kp PT_BSLH   &kp PT_Q    &kp PT_W    &kp PT_E    &kp PT_R    &kp PT_T                                 &kp PT_Y    &kp PT_U      &kp PT_I       &kp PT_O     &kp PT_P           &kp PT_SINGLE_QUOTE
+  &kp TAB       &kp PT_A    &kp PT_S    &kp PT_D    &kp PT_F    &kp PT_G                                 &kp PT_H    &kp PT_J      &kp PT_K       &kp PT_L     &kp PT_C_CEDILLA   &kp PT_TILDE
+  &kp LSHFT     &kp PT_Z    &kp PT_X    &kp PT_C    &kp PT_V    &kp PT_B    &kp C_MUTE       &kp C_PP    &kp PT_N    &kp PT_M      &kp PT_COMMA   &kp PT_DOT   &kp PT_MINUS       &kp PT_LESS_THAN
+                            &kp LCTRL   &kp LGUI    &kp LALT    &kp SPACE   &mo LOWER        &mo RAISE   &kp RET     &kp PT_ORDM   &kp RALT       &kp RCTRL
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
@@ -85,22 +85,22 @@
         lower_layer {
             display-name = "lower";
             bindings = <
-//    ┌──────┬──────┬──────┬──────┬──────┬──────┐           ┌──────┬──────┬──────┬──────┬──────┬──────────┐
-//    │      │ pscr │ PT_^ │ PT_| │ PT_& │ PT_$ │           │      │ nlck │ kp_/ │ kp_* │ kp_- │   del    │
-//    ├──────┼──────┼──────┼──────┼──────┼──────┤           ├──────┼──────┼──────┼──────┼──────┼──────────┤
-//    │      │ app  │ PT_# │ PT_( │ PT_) │ PT_= │           │ PT_* │  7   │  8   │  9   │ kp_+ │          │
-//    ├──────┼──────┼──────┼──────┼──────┼──────┤           ├──────┼──────┼──────┼──────┼──────┼──────────┤
-//    │      │ slck │ PT_% │ PT_{ │ PT_} │ PT_/ │           │ PT_- │  4   │  5   │  6   │ kp_+ │ PT_ACUTE │
-//    ├──────┼──────┼──────┼──────┼──────┼──────┼─────┬─────┼──────┼──────┼──────┼──────┼──────┼──────────┤
-//    │ caps │      │ PT_@ │ PT_[ │ PT_] │ PT_! │     │     │ PT_+ │  1   │  2   │  3   │ PT_= │          │
-//    └──────┴──────┼──────┼──────┼──────┼──────┼─────┼─────┼──────┼──────┼──────┼──────┼──────┴──────────┘
-//                  │      │      │      │      │     │     │      │  0   │  0   │ kp_. │
-//                  └──────┴──────┴──────┴──────┴─────┴─────┴──────┴──────┴──────┴──────┘
-  &trans     &kp PSCRN     &kp PT_CARET   &kp PT_PIPE   &kp PT_AMPS   &kp PT_DOLLAR                     &trans         &kp KP_NUM   &kp KP_DIVIDE   &kp KP_MULTIPLY   &kp KP_MINUS   &kp DEL
-  &trans     &kp K_CMENU   &kp PT_HASH    &kp PT_LPAR   &kp PT_RPAR   &kp PT_EQUAL                      &kp PT_STAR    &kp KP_N7    &kp KP_N8       &kp KP_N9         &kp KP_PLUS    &trans
-  &trans     &kp SLCK      &kp PT_PRCNT   &kp PT_LBRC   &kp PT_RBRC   &kp PT_FSLH                       &kp PT_MINUS   &kp KP_N4    &kp KP_N5       &kp KP_N6         &kp KP_PLUS    &kp PT_ACUTE
-  &kp CAPS   &trans        &kp PT_AT      &kp PT_LBKT   &kp PT_RBKT   &kp PT_EXCL     &trans   &trans   &kp PT_PLUS    &kp KP_N1    &kp KP_N2       &kp KP_N3         &kp PT_EQUAL   &trans
-                           &trans         &trans        &trans        &trans          &trans   &trans   &trans         &kp KP_N0    &kp KP_N0       &kp KP_DOT
+//    ┌──────┬──────┬──────┬──────┬──────┬──────┐               ┌──────┬──────┬──────┬──────┬──────┬──────────┐
+//    │      │ pscr │ PT_^ │ PT_| │ PT_& │ PT_$ │               │      │ nlck │ kp_/ │ kp_* │ kp_- │   del    │
+//    ├──────┼──────┼──────┼──────┼──────┼──────┤               ├──────┼──────┼──────┼──────┼──────┼──────────┤
+//    │      │ app  │ PT_# │ PT_( │ PT_) │ PT_= │               │ PT_* │  7   │  8   │  9   │ kp_+ │          │
+//    ├──────┼──────┼──────┼──────┼──────┼──────┤               ├──────┼──────┼──────┼──────┼──────┼──────────┤
+//    │      │ slck │ PT_% │ PT_{ │ PT_} │ PT_/ │               │ PT_- │  4   │  5   │  6   │ kp_+ │ PT_ACUTE │
+//    ├──────┼──────┼──────┼──────┼──────┼──────┼─────┐   ┌─────┼──────┼──────┼──────┼──────┼──────┼──────────┤
+//    │ caps │      │ PT_@ │ PT_[ │ PT_] │ PT_! │     │   │     │ PT_+ │  1   │  2   │  3   │ PT_= │          │
+//    └──────┴──────┼──────┼──────┼──────┼──────┼─────┤   ├─────┼──────┼──────┼──────┼──────┼──────┴──────────┘
+//                  │      │      │      │      │     │   │     │      │  0   │  0   │ kp_. │
+//                  └──────┴──────┴──────┴──────┴─────┘   └─────┴──────┴──────┴──────┴──────┘
+  &trans     &kp PSCRN     &kp PT_CARET   &kp PT_PIPE   &kp PT_AMPS   &kp PT_DOLLAR                         &trans         &kp KP_NUM   &kp KP_DIVIDE   &kp KP_MULTIPLY   &kp KP_MINUS   &kp DEL
+  &trans     &kp K_CMENU   &kp PT_HASH    &kp PT_LPAR   &kp PT_RPAR   &kp PT_EQUAL                          &kp PT_STAR    &kp KP_N7    &kp KP_N8       &kp KP_N9         &kp KP_PLUS    &trans
+  &trans     &kp SLCK      &kp PT_PRCNT   &kp PT_LBRC   &kp PT_RBRC   &kp PT_FSLH                           &kp PT_MINUS   &kp KP_N4    &kp KP_N5       &kp KP_N6         &kp KP_PLUS    &kp PT_ACUTE
+  &kp CAPS   &trans        &kp PT_AT      &kp PT_LBKT   &kp PT_RBKT   &kp PT_EXCL     &trans       &trans   &kp PT_PLUS    &kp KP_N1    &kp KP_N2       &kp KP_N3         &kp PT_EQUAL   &trans
+                           &trans         &trans        &trans        &trans          &trans       &trans   &trans         &kp KP_N0    &kp KP_N0       &kp KP_DOT
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
         };
@@ -108,22 +108,22 @@
         raise_layer {
             display-name = "raise";
             bindings = <
-//    ┌───────┬──────┬──────┬──────┬─────────┬──────┐           ┌──────┬──────┬──────┬──────┬─────┬─────┐
-//    │       │  f1  │  f2  │  f3  │   f4    │  f5  │           │  f6  │  f7  │  f8  │  f9  │ f10 │ del │
-//    ├───────┼──────┼──────┼──────┼─────────┼──────┤           ├──────┼──────┼──────┼──────┼─────┼─────┤
-//    │       │ ins  │ pscr │ app  │         │ bri+ │           │ home │ pgup │ volu │ next │ f11 │ f12 │
-//    ├───────┼──────┼──────┼──────┼─────────┼──────┤           ├──────┼──────┼──────┼──────┼─────┼─────┤
-//    │       │ lalt │ lctl │ lsft │         │ bri- │           │ left │ down │  up  │ rght │     │     │
-//    ├───────┼──────┼──────┼──────┼─────────┼──────┼─────┬─────┼──────┼──────┼──────┼──────┼─────┼─────┤
-//    │ again │ undo │ cut  │ copy │ K_PASTE │ mute │     │     │ end  │ pgdn │ vold │ prev │     │     │
-//    └───────┴──────┼──────┼──────┼─────────┼──────┼─────┼─────┼──────┼──────┼──────┼──────┼─────┴─────┘
-//                   │      │      │         │      │     │     │      │      │      │      │
-//                   └──────┴──────┴─────────┴──────┴─────┴─────┴──────┴──────┴──────┴──────┘
-  &trans       &kp F1       &kp F2      &kp F3        &kp F4        &kp F5                           &kp F6     &kp F7      &kp F8         &kp F9       &kp F10   &kp DEL
-  &trans       &kp INS      &kp PSCRN   &kp K_CMENU   &trans        &kp C_BRI_UP                     &kp HOME   &kp PG_UP   &kp C_VOL_UP   &kp C_NEXT   &kp F11   &kp F12
-  &trans       &kp LALT     &kp LCTRL   &kp LSHFT     &trans        &kp C_BRI_DN                     &kp LEFT   &kp DOWN    &kp UP         &kp RIGHT    &trans    &trans
-  &kp K_REDO   &kp K_UNDO   &kp K_CUT   &kp K_COPY    &kp K_PASTE   &kp C_MUTE     &trans   &trans   &kp END    &kp PG_DN   &kp C_VOL_DN   &kp C_PREV   &trans    &trans
-                            &trans      &trans        &trans        &trans         &trans   &trans   &trans     &trans      &trans         &trans
+//    ┌───────┬──────┬──────┬──────┬─────────┬──────┐               ┌──────┬──────┬──────┬──────┬─────┬─────┐
+//    │       │  f1  │  f2  │  f3  │   f4    │  f5  │               │  f6  │  f7  │  f8  │  f9  │ f10 │ del │
+//    ├───────┼──────┼──────┼──────┼─────────┼──────┤               ├──────┼──────┼──────┼──────┼─────┼─────┤
+//    │       │ ins  │ pscr │ app  │         │ bri+ │               │ home │ pgup │ volu │ next │ f11 │ f12 │
+//    ├───────┼──────┼──────┼──────┼─────────┼──────┤               ├──────┼──────┼──────┼──────┼─────┼─────┤
+//    │       │ lalt │ lctl │ lsft │         │ bri- │               │ left │ down │  up  │ rght │     │     │
+//    ├───────┼──────┼──────┼──────┼─────────┼──────┼─────┐   ┌─────┼──────┼──────┼──────┼──────┼─────┼─────┤
+//    │ again │ undo │ cut  │ copy │ K_PASTE │ mute │     │   │     │ end  │ pgdn │ vold │ prev │     │     │
+//    └───────┴──────┼──────┼──────┼─────────┼──────┼─────┤   ├─────┼──────┼──────┼──────┼──────┼─────┴─────┘
+//                   │      │      │         │      │     │   │     │      │      │      │      │
+//                   └──────┴──────┴─────────┴──────┴─────┘   └─────┴──────┴──────┴──────┴──────┘
+  &trans       &kp F1       &kp F2      &kp F3        &kp F4        &kp F5                               &kp F6     &kp F7      &kp F8         &kp F9       &kp F10   &kp DEL
+  &trans       &kp INS      &kp PSCRN   &kp K_CMENU   &trans        &kp C_BRI_UP                         &kp HOME   &kp PG_UP   &kp C_VOL_UP   &kp C_NEXT   &kp F11   &kp F12
+  &trans       &kp LALT     &kp LCTRL   &kp LSHFT     &trans        &kp C_BRI_DN                         &kp LEFT   &kp DOWN    &kp UP         &kp RIGHT    &trans    &trans
+  &kp K_REDO   &kp K_UNDO   &kp K_CUT   &kp K_COPY    &kp K_PASTE   &kp C_MUTE     &trans       &trans   &kp END    &kp PG_DN   &kp C_VOL_DN   &kp C_PREV   &trans    &trans
+                            &trans      &trans        &trans        &trans         &trans       &trans   &trans     &trans      &trans         &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
         };
@@ -131,22 +131,22 @@
         adjust_layer {
             display-name = "adjust";
             bindings = <
-//    ┌───────────┬──────────┬──────────┬──────────┬──────────┬──────────┐               ┌────────────────┬────────────────┬────────────────┬────────────────┬──────────┬────────────┐
-//    │  bt_clr   │ bt_sel 0 │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │ bt_sel 4 │               │    bt_sel 5    │    bt_sel 6    │    bt_sel 7    │    bt_sel 8    │ bt_sel 9 │ bt_clr_ALL │
-//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┤               ├────────────────┼────────────────┼────────────────┼────────────────┼──────────┼────────────┤
-//    │ epwr_ tog │ ug_ hu-  │ ug_ hu+  │ ug_ sa-  │ ug_ sa+  │ ug_ eff  │               │  &msc SCRL_up  │      lclk      │  &mmv MOVE_up  │      rclk      │          │            │
-//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┤               ├────────────────┼────────────────┼────────────────┼────────────────┼──────────┼────────────┤
-//    │           │ ug_ br-  │ ug_ br+  │          │          │ ug_ efr  │               │                │ &mmv MOVE_left │      mclk      │ &mmv MOVE_rght │          │            │
-//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┼─────────┬─────┼────────────────┼────────────────┼────────────────┼────────────────┼──────────┼────────────┤
-//    │           │          │          │          │          │          │ ug_ tog │     │ &msc SCRL_down │ &msc SCRL_left │ &mmv MOVE_down │ &msc SCRL_rght │          │            │
-//    └───────────┴──────────┼──────────┼──────────┼──────────┼──────────┼─────────┼─────┼────────────────┼────────────────┼────────────────┼────────────────┼──────────┴────────────┘
-//                           │ out_ usb │ out_ tog │ out_ ble │          │         │     │                │                │                │                │
-//                           └──────────┴──────────┴──────────┴──────────┴─────────┴─────┴────────────────┴────────────────┴────────────────┴────────────────┘
-  &bt BT_CLR          &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &bt BT_SEL 4                                 &bt BT_SEL 5     &bt BT_SEL 6     &bt BT_SEL 7     &bt BT_SEL 8      &bt BT_SEL 9   &bt BT_CLR_ALL
-  &ext_power EP_TOG   &rgb_ug RGB_HUD   &rgb_ug RGB_HUI   &rgb_ug RGB_SAD   &rgb_ug RGB_SAI   &rgb_ug RGB_EFF                              &msc SCRL_UP     &mkp LCLK        &mmv MOVE_UP     &mkp RCLK         &trans         &trans
-  &trans              &rgb_ug RGB_BRD   &rgb_ug RGB_BRI   &trans            &trans            &rgb_ug RGB_EFR                              &trans           &mmv MOVE_LEFT   &mkp MCLK        &mmv MOVE_RIGHT   &trans         &trans
-  &trans              &trans            &trans            &trans            &trans            &trans            &rgb_ug RGB_TOG   &trans   &msc SCRL_DOWN   &msc SCRL_LEFT   &mmv MOVE_DOWN   &msc SCRL_RIGHT   &trans         &trans
-                                        &out OUT_USB      &out OUT_TOG      &out OUT_BLE      &trans            &trans            &trans   &trans           &trans           &trans           &trans
+//    ┌───────────┬──────────┬──────────┬──────────┬──────────┬──────────┐                   ┌────────────────┬────────────────┬────────────────┬────────────────┬──────────┬────────────┐
+//    │  bt_clr   │ bt_sel 0 │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │ bt_sel 4 │                   │    bt_sel 5    │    bt_sel 6    │    bt_sel 7    │    bt_sel 8    │ bt_sel 9 │ bt_clr_ALL │
+//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┤                   ├────────────────┼────────────────┼────────────────┼────────────────┼──────────┼────────────┤
+//    │ epwr_ tog │ ug_ hu-  │ ug_ hu+  │ ug_ sa-  │ ug_ sa+  │ ug_ eff  │                   │  &msc SCRL_up  │      lclk      │  &mmv MOVE_up  │      rclk      │          │            │
+//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┤                   ├────────────────┼────────────────┼────────────────┼────────────────┼──────────┼────────────┤
+//    │           │ ug_ br-  │ ug_ br+  │          │          │ ug_ efr  │                   │                │ &mmv MOVE_left │      mclk      │ &mmv MOVE_rght │          │            │
+//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┼─────────┐   ┌─────┼────────────────┼────────────────┼────────────────┼────────────────┼──────────┼────────────┤
+//    │           │          │          │          │          │          │ ug_ tog │   │     │ &msc SCRL_down │ &msc SCRL_left │ &mmv MOVE_down │ &msc SCRL_rght │          │            │
+//    └───────────┴──────────┼──────────┼──────────┼──────────┼──────────┼─────────┤   ├─────┼────────────────┼────────────────┼────────────────┼────────────────┼──────────┴────────────┘
+//                           │ out_ usb │ out_ tog │ out_ ble │          │         │   │     │                │                │                │                │
+//                           └──────────┴──────────┴──────────┴──────────┴─────────┘   └─────┴────────────────┴────────────────┴────────────────┴────────────────┘
+  &bt BT_CLR          &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &bt BT_SEL 4                                     &bt BT_SEL 5     &bt BT_SEL 6     &bt BT_SEL 7     &bt BT_SEL 8      &bt BT_SEL 9   &bt BT_CLR_ALL
+  &ext_power EP_TOG   &rgb_ug RGB_HUD   &rgb_ug RGB_HUI   &rgb_ug RGB_SAD   &rgb_ug RGB_SAI   &rgb_ug RGB_EFF                                  &msc SCRL_UP     &mkp LCLK        &mmv MOVE_UP     &mkp RCLK         &trans         &trans
+  &trans              &rgb_ug RGB_BRD   &rgb_ug RGB_BRI   &trans            &trans            &rgb_ug RGB_EFR                                  &trans           &mmv MOVE_LEFT   &mkp MCLK        &mmv MOVE_RIGHT   &trans         &trans
+  &trans              &trans            &trans            &trans            &trans            &trans            &rgb_ug RGB_TOG       &trans   &msc SCRL_DOWN   &msc SCRL_LEFT   &mmv MOVE_DOWN   &msc SCRL_RIGHT   &trans         &trans
+                                        &out OUT_USB      &out OUT_TOG      &out OUT_BLE      &trans            &trans                &trans   &trans           &trans           &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
