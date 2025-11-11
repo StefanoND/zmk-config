@@ -11,6 +11,10 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
+#include <dt-bindings/zmk/pointing.h>
+
 // For a list of available locales, check the link below
 // https://github.com/joelspadin/zmk-locales/tree/main/include/locale
 #include <locale/keys_pt.h>
@@ -127,22 +131,22 @@
         adjust_layer {
             display-name = "adjust";
             bindings = <
-//    ┌───────────┬──────────┬──────────┬──────────┬──────────┬──────────┐               ┌──────────┬──────────┬──────────┬──────────┬──────────┬────────────┐
-//    │  bt_clr   │ bt_sel 0 │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │ bt_sel 4 │               │ bt_sel 5 │ bt_sel 6 │ bt_sel 7 │ bt_sel 8 │ bt_sel 9 │ bt_clr_ALL │
-//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┤               ├──────────┼──────────┼──────────┼──────────┼──────────┼────────────┤
-//    │ epwr_ tog │ ug_ hu-  │ ug_ hu+  │ ug_ sa-  │ ug_ sa+  │ ug_ eff  │               │          │          │          │          │          │            │
-//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┤               ├──────────┼──────────┼──────────┼──────────┼──────────┼────────────┤
-//    │           │ ug_ br-  │ ug_ br+  │          │          │ ug_ efr  │               │ out_ usb │ out_ tog │          │          │          │            │
-//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┼─────────┬─────┼──────────┼──────────┼──────────┼──────────┼──────────┼────────────┤
-//    │           │          │          │          │          │          │ ug_ tog │     │ out_ ble │          │          │          │          │            │
-//    └───────────┴──────────┼──────────┼──────────┼──────────┼──────────┼─────────┼─────┼──────────┼──────────┼──────────┼──────────┼──────────┴────────────┘
-//                           │          │          │          │          │         │     │          │          │          │          │
-//                           └──────────┴──────────┴──────────┴──────────┴─────────┴─────┴──────────┴──────────┴──────────┴──────────┘
-  &bt BT_CLR          &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &bt BT_SEL 4                                 &bt BT_SEL 5   &bt BT_SEL 6   &bt BT_SEL 7   &bt BT_SEL 8   &bt BT_SEL 9   &bt BT_CLR_ALL
-  &ext_power EP_TOG   &rgb_ug RGB_HUD   &rgb_ug RGB_HUI   &rgb_ug RGB_SAD   &rgb_ug RGB_SAI   &rgb_ug RGB_EFF                              &trans         &trans         &trans         &trans         &trans         &trans
-  &trans              &rgb_ug RGB_BRD   &rgb_ug RGB_BRI   &trans            &trans            &rgb_ug RGB_EFR                              &out OUT_USB   &out OUT_TOG   &trans         &trans         &trans         &trans
-  &trans              &trans            &trans            &trans            &trans            &trans            &rgb_ug RGB_TOG   &trans   &out OUT_BLE   &trans         &trans         &trans         &trans         &trans
-                                        &trans            &trans            &trans            &trans            &trans            &trans   &trans         &trans         &trans         &trans
+//    ┌───────────┬──────────┬──────────┬──────────┬──────────┬──────────┐               ┌────────────────┬────────────────┬────────────────┬────────────────┬──────────┬────────────┐
+//    │  bt_clr   │ bt_sel 0 │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │ bt_sel 4 │               │    bt_sel 5    │    bt_sel 6    │    bt_sel 7    │    bt_sel 8    │ bt_sel 9 │ bt_clr_ALL │
+//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┤               ├────────────────┼────────────────┼────────────────┼────────────────┼──────────┼────────────┤
+//    │ epwr_ tog │ ug_ hu-  │ ug_ hu+  │ ug_ sa-  │ ug_ sa+  │ ug_ eff  │               │  &msc SCRL_up  │      lclk      │  &mmv MOVE_up  │      rclk      │          │            │
+//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┤               ├────────────────┼────────────────┼────────────────┼────────────────┼──────────┼────────────┤
+//    │           │ ug_ br-  │ ug_ br+  │          │          │ ug_ efr  │               │                │ &mmv MOVE_left │      mclk      │ &mmv MOVE_rght │          │            │
+//    ├───────────┼──────────┼──────────┼──────────┼──────────┼──────────┼─────────┬─────┼────────────────┼────────────────┼────────────────┼────────────────┼──────────┼────────────┤
+//    │           │          │          │          │          │          │ ug_ tog │     │ &msc SCRL_down │ &msc SCRL_left │ &mmv MOVE_down │ &msc SCRL_rght │          │            │
+//    └───────────┴──────────┼──────────┼──────────┼──────────┼──────────┼─────────┼─────┼────────────────┼────────────────┼────────────────┼────────────────┼──────────┴────────────┘
+//                           │ out_ usb │ out_ tog │ out_ ble │          │         │     │                │                │                │                │
+//                           └──────────┴──────────┴──────────┴──────────┴─────────┴─────┴────────────────┴────────────────┴────────────────┴────────────────┘
+  &bt BT_CLR          &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &bt BT_SEL 4                                 &bt BT_SEL 5     &bt BT_SEL 6     &bt BT_SEL 7     &bt BT_SEL 8      &bt BT_SEL 9   &bt BT_CLR_ALL
+  &ext_power EP_TOG   &rgb_ug RGB_HUD   &rgb_ug RGB_HUI   &rgb_ug RGB_SAD   &rgb_ug RGB_SAI   &rgb_ug RGB_EFF                              &msc SCRL_UP     &mkp LCLK        &mmv MOVE_UP     &mkp RCLK         &trans         &trans
+  &trans              &rgb_ug RGB_BRD   &rgb_ug RGB_BRI   &trans            &trans            &rgb_ug RGB_EFR                              &trans           &mmv MOVE_LEFT   &mkp MCLK        &mmv MOVE_RIGHT   &trans         &trans
+  &trans              &trans            &trans            &trans            &trans            &trans            &rgb_ug RGB_TOG   &trans   &msc SCRL_DOWN   &msc SCRL_LEFT   &mmv MOVE_DOWN   &msc SCRL_RIGHT   &trans         &trans
+                                        &out OUT_USB      &out OUT_TOG      &out OUT_BLE      &trans            &trans            &trans   &trans           &trans           &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
